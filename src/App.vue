@@ -1,6 +1,34 @@
 <script setup>
+import { computed, ref, watch } from 'vue'
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
+
+const link = ref('/about')
+const switched = ref(false)
+
+watch(
+  () => switched.value,
+  (hasSwitched) => {
+    console.log('hasSwitched', hasSwitched)
+    if (!hasSwitched) {
+      link.value = '/about'
+    } else {
+      link.value = '/'
+    }
+  },
+  { immediate: true }
+)
+
+const home = ref({ label: 'Home', code: 'home', icon: 'DisplayHome24' })
+
+const features = computed(() => [
+  {
+    label: 'About',
+    code: 'about',
+    icon: 'DisplayDisplayProductX4Outline24',
+    route: link.value
+  }
+])
 </script>
 
 <template>
@@ -14,8 +42,14 @@ import HelloWorld from './components/HelloWorld.vue'
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
       </nav>
+      <MButton
+        label="Update Sidebar Route"
+        @click="switched = !switched"
+        :theme="switched ? 'bordered' : null"
+      />
     </div>
   </header>
+  <MSidebar :home="home" :features="features" open />
 
   <RouterView />
 </template>
