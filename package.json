@@ -11,17 +11,17 @@
     "format": "prettier --write src/"
   },
   "dependencies": {
-    "@mozaic-ds/vue-3": "^0.57.1",
-    "vue": "^3.3.11",
+    "@mozaic-ds/vue-3": "^0.58.1",
+    "vue": "^3.4.19",
     "vue-router": "^4.2.5"
   },
   "devDependencies": {
-    "@rushstack/eslint-patch": "^1.3.3",
-    "@vitejs/plugin-vue": "^4.5.2",
-    "@vue/eslint-config-prettier": "^8.0.0",
-    "eslint": "^8.49.0",
-    "eslint-plugin-vue": "^9.17.0",
-    "prettier": "^3.0.3",
-    "vite": "^5.0.12"
+    "@rushstack/eslint-patch": "^1.7.2",
+    "@vitejs/plugin-vue": "^4.6.2",
+    "@vue/eslint-config-prettier": "^9.0.0",
+    "eslint": "^8.56.0",
+    "eslint-plugin-vue": "^9.21.1",
+    "prettier": "^3.2.5",
+    "vite": "^5.1.1"
   }
 }
